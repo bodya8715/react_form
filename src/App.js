@@ -1,8 +1,8 @@
 import React from "react";
+import './style.css';
 import CreateAccount from "./components/CreateAccount";
 import LoginToAccount from "./components/LoginToAccount";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import './App.css';
 
 function App() {
   return (

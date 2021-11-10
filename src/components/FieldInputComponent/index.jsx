@@ -2,7 +2,7 @@ import styles from './style.module.scss'
 import { Field } from 'formik';
 import cx from 'classnames';
 
-function FieldComponent({name}) {
+function FieldInputComponent({name, type, className}) {
     return (
         <Field name={name}>
             {
@@ -14,7 +14,7 @@ function FieldComponent({name}) {
                     console.log(meta);
                     return (
                         <>
-                            <input type="text" className={inputStyles} {...field} placeholder={`Введите `}/>
+                            <input type={type} className={`${inputStyles} ${className}`} {...field} />
                         </>
                     );
                 }
@@ -23,4 +23,4 @@ function FieldComponent({name}) {
     );
 }
 
-export default FieldComponent;
+export default FieldInputComponent;
