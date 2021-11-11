@@ -1,0 +1,14 @@
+.form {
+    &_radio_wrapper {
+        border: 1px solid #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    &_radio_item{
+        display: flex;
+    }
+    &_radio_inner {
+        text-align: left;
+        margin-left: 20px;
+    }
+}
