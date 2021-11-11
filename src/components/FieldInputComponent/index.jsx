@@ -2,7 +2,13 @@ import styles from './style.module.scss'
 import { Field } from 'formik';
 import cx from 'classnames';
 
-function FieldInputComponent({name, type, className}) {
+function FieldInputComponent({
+    name, 
+    type, 
+    classNameFormField, 
+    classNameFormFieldCeil,
+    classNameFormErrorMessage
+}) {
     return (
         <Field name={name}>
             {
@@ -11,11 +17,11 @@ function FieldInputComponent({name, type, className}) {
                         [styles.normal]: !meta.error && meta.touched,
                         [styles.error]: meta.error && meta.touched
                     });
-                    console.log(meta);
                     return (
-                        <>
-                            <input type={type} className={`${inputStyles} ${className}`} {...field} />
-                        </>
+                        <div className={styles.form_field}>
+                            <input type={type} className={`${inputStyles} ${styles.form_field_ceil}`} {...field} />{
+                            meta.touched && meta.error && ( <div className={styles.form_error_message}>{meta.error}</div>)}
+                        </div>
                     );
                 }
             }

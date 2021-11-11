@@ -1,7 +1,8 @@
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 import { Formik, Form } from 'formik';
 import FieldInputComponent from '../FieldInputComponent';
 import RadioComponent from '../RadioComponent';
+import EmptyComponent from '../EmptyComponent';
 import FormRow from '../FormRow';
 import * as yup from 'yup';
 
@@ -41,16 +42,19 @@ function CreateAccount() {
           <Formik initialValues={initialValues} validationSchema={validationSchema} validateOnBlur onSubmit={onSumbit}>
             <Form className={styles.form_body}>
               <FormRow>
-                <FieldInputComponent className={styles.form_field} name='firstName' type='text' />
-                <FieldInputComponent className={styles.form_field} name='lastName' type='text'/>
+                <FieldInputComponent name='firstName' type='text' />
+                <EmptyComponent/>
+                <FieldInputComponent name='lastName' type='text' />
               </FormRow>
               <FormRow>
-                <FieldInputComponent className={styles.form_field} name='displayName' type='text' />
-                <FieldInputComponent className={styles.form_field} name='emailAdress' type='email'/>
+                <FieldInputComponent name='displayName' type='text' />
+                <EmptyComponent/>
+                <FieldInputComponent name='emailAdress' type='email' />
               </FormRow>
               <FormRow>
-                <FieldInputComponent className={styles.form_field} name='password' type='password' />
-                <FieldInputComponent className={styles.form_field} name='passwordConfirmation' type='password'/>
+                <FieldInputComponent name='password' type='password' />
+                <EmptyComponent/>
+                <FieldInputComponent name='passwordConfirmation' type='password' />
               </FormRow>
             <RadioComponent name="join" type='radio' value='Buyer'/>
             <RadioComponent name="join" type='radio' value='Marketplace Seller'/>
