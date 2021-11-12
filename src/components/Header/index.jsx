@@ -5,7 +5,7 @@ function Header({isLoggedIn, changePage}) {
     <header className={styles.header} >
         <div className={styles.header_container}>
         <div className={styles.header_logo_wrapper}>
-            <img src="https://www.squadhelp.com/img/logo.png" alt="logo"/>
+            <img className={styles.header_logo_img} src="https://www.squadhelp.com/img/logo.png" alt="logo"/>
         </div>
         <div>
             <a className={styles.login_button} onClick={()=>changePage(!isLoggedIn)} type='button'>{isLoggedIn?'SignUp':'Login'}</a>

@@ -2,7 +2,6 @@ import styles from './style.module.scss';
 import { Formik, Form } from 'formik';
 import FieldInputComponent from '../FieldInputComponent';
 import RadioComponent from '../RadioComponent';
-import EmptyComponent from '../EmptyComponent';
 import FormRow from '../FormRow';
 import { SignUpSchema } from '../../utils/validationSchemas';
 

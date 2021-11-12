@@ -1,4 +1,5 @@
 import styles from '../CreateAccount/style.module.scss';
+import form_field_styles from './styles.module.scss';
 import { Formik, Form } from 'formik';
 import FormRow from "../FormRow";
 import FieldInputComponent from "../FieldInputComponent";
@@ -23,10 +24,10 @@ function LoginToAccount() {
                     <Formik initialValues={initialValues} validationSchema={SignInSchema} validateOnBlur onSubmit={onSumbit}>
                         <Form className={styles.form_body}>
                             <FormRow>
-                                <FieldInputComponent name='emailAdress' type='email' placeholder='Email'/>
+                                <FieldInputComponent name='emailAdress' type='email' placeholder='Email' className={form_field_styles.form_field}/>
                             </FormRow>
                             <FormRow>
-                                <FieldInputComponent name='password' type='password' placeholder='Password'/>
+                                <FieldInputComponent name='password' type='password' placeholder='Password' className={form_field_styles.form_field}/>
                             </FormRow>
                             <button className={styles.form_confirm} type='submit'>Login</button>
                         </Form>
