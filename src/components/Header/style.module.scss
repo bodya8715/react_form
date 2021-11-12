@@ -1,20 +1,31 @@
 .header {
-    &_container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1080px;
-        margin: 0 auto;
-    }
+  margin-top: 40px;
+  &_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1080px;
+      padding: 0 50px;
+      margin: 0 auto;
   }
+}
   
-  .login_button {
-    padding: 10px 15px;
-    color: #fff;
-    background: #3ea9f5;
-    border: 1px solid rgba(255,255,255,.77);
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-  }
+.login_button {
+  padding: 10px 15px;
+  color: #fff;
+  background: #3ea9f5;
+  border: 1px solid rgba(255,255,255,.77);
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+// @media screen and (max-width: 800px) {
+//   .header {
+//     &_container {
+//       padding: 0 20px;
+//     }
+//   }
+
+// }

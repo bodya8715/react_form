@@ -1,13 +1,15 @@
 .form {
     &_field {
-        //width: 48%;
-        flex-grow: 1;
+        width: 47%;
+        flex-shrink: 1;
         border-radius: 4px;
         border:0;
         position: relative;
         &_ceil {
             width: 100%;
-            padding: 10px;
+            color: #9CA8B7;
+            font-size: 16px;
+            padding: 21px 23px;
         }
     }
     &_error_message {
@@ -18,7 +20,6 @@
     }
 }
 
-
 .normal {
     border: 3px solid green;
 }
@@ -26,4 +27,5 @@
 .error {
     border: 3px solid red;
 }
+
 

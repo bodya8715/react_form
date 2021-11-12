@@ -4,10 +4,8 @@ import cx from 'classnames';
 
 function FieldInputComponent({
     name, 
-    type, 
-    classNameFormField, 
-    classNameFormFieldCeil,
-    classNameFormErrorMessage
+    type,
+    placeholder
 }) {
     return (
         <Field name={name}>
@@ -19,7 +17,7 @@ function FieldInputComponent({
                     });
                     return (
                         <div className={styles.form_field}>
-                            <input type={type} className={`${inputStyles} ${styles.form_field_ceil}`} {...field} />{
+                            <input type={type} className={`${inputStyles} ${styles.form_field_ceil}`} {...field} placeholder={placeholder} />{
                             meta.touched && meta.error && ( <div className={styles.form_error_message}>{meta.error}</div>)}
                         </div>
                     );

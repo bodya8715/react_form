@@ -4,7 +4,7 @@ import FieldInputComponent from '../FieldInputComponent';
 import RadioComponent from '../RadioComponent';
 import EmptyComponent from '../EmptyComponent';
 import FormRow from '../FormRow';
-import * as yup from 'yup';
+import { SignUpSchema } from '../../utils/validationSchemas';
 
 
 const initialValues = {
@@ -15,15 +15,6 @@ const initialValues = {
   password: '',
   passwordConfirmation: ''
 };
-
-const validationSchema = yup.object().shape({
-  firstName: yup.string().typeError('Должно быть строкой').required('Обязательно'),
-  lastName:  yup.string().typeError('Должно быть строкой').required('Обязательно'),
-  displayName:  yup.string().typeError('Должно быть строкой').required('Обязательно'),
-  emailAdress: yup.string().email('Введите верный email').required('Обязательно'),
-  password: yup.string().typeError('Должно быть строкой').required('Обязательно'),
-  passwordConfirmation: yup.string().oneOf([yup.ref('password')], 'Пароли не совпадают').required('Обязательно')
-});
 
 function onSumbit(values, formikBag) {
   console.log(values);
@@ -39,22 +30,19 @@ function CreateAccount() {
           <p className={styles.form_description}>
             We always keep your name and email address private.
           </p>
-          <Formik initialValues={initialValues} validationSchema={validationSchema} validateOnBlur onSubmit={onSumbit}>
+          <Formik initialValues={initialValues} validationSchema={SignUpSchema} validateOnBlur onSubmit={onSumbit}>
             <Form className={styles.form_body}>
               <FormRow>
-                <FieldInputComponent name='firstName' type='text' />
-                <EmptyComponent/>
-                <FieldInputComponent name='lastName' type='text' />
+                <FieldInputComponent name='firstName' type='text' placeholder='First Name' />
+                <FieldInputComponent name='lastName' type='text' placeholder='Last Name' />
               </FormRow>
               <FormRow>
-                <FieldInputComponent name='displayName' type='text' />
-                <EmptyComponent/>
-                <FieldInputComponent name='emailAdress' type='email' />
+                <FieldInputComponent name='displayName' type='text' placeholder='Display Name' />
+                <FieldInputComponent name='emailAdress' type='email' placeholder='Email Adress' />
               </FormRow>
               <FormRow>
-                <FieldInputComponent name='password' type='password' />
-                <EmptyComponent/>
-                <FieldInputComponent name='passwordConfirmation' type='password' />
+                <FieldInputComponent name='password' type='password' placeholder='Password Adress' />
+                <FieldInputComponent name='passwordConfirmation' type='password'  placeholder='Password Confirmation' />
               </FormRow>
             <RadioComponent name="join" type='radio' value='Buyer'/>
             <RadioComponent name="join" type='radio' value='Marketplace Seller'/>
