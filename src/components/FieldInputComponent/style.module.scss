@@ -11,9 +11,6 @@
             padding: 21px 23px;
         }
     }
-    &_field:first-child {
-        margin-right: 20px;
-    }
     &_error_message {
         position: absolute;
         color:red;
@@ -34,10 +31,6 @@
     .form {
         &_field {
             flex: 0 1 auto;
-        }
-        &_field:first-child {
-            margin-right: 0px;
-            margin-bottom: 20px;
         }
     }
 }

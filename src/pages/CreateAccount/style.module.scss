@@ -6,13 +6,17 @@
         flex-direction: column;
         max-width: 550px;
         padding: 0 50px;
-        margin: 50px auto 50px auto;
+        margin: 50px auto;
     }
     &_title {
         margin-bottom: 10px;
     }
     &_description {
         margin-bottom: 20px;
+    }
+    &_field_double{
+        margin-right: 20px;
+        margin-bottom: 0px;
     }
     &_confirm {
         width: 100%;
@@ -24,5 +28,14 @@
         color: #fff;
         font-size: 16px;
         font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        &_field_double {
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
     }
 }

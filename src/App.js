@@ -1,24 +1,22 @@
-import React, { useState } from "react";
 import './style.css';
-import Header from "./components/Header";
-import CreateAccount from "./components/CreateAccount";
-import LoginToAccount from "./components/LoginToAccount";
+import CreateAccount from './pages/CreateAccount';
+import LoginToAccount from './pages/LoginToAccount';
+import Header from './components/Header';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [isLoggedIn, changePage] = useState(false);
-  let page;
-
-  if(isLoggedIn) {
-    page = <LoginToAccount/>;
-  } else {
-    page = <CreateAccount/>;
-  }
-
   return (
-    <>
-      <Header isLoggedIn={isLoggedIn} changePage={changePage}/>
-      {page}
-    </>
+    <BrowserRouter>
+      <Header/>
+      <Switch>
+        <Route exact path='/'>
+          <CreateAccount/>
+        </Route>
+        <Route exact path='/LogIn'>
+          <LoginToAccount/>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
